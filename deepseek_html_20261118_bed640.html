@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paranżska mowa — спадчына продкаў</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=UnifrakturMaguntia&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8dcc0;
+  --bg-dark:#1a1108;
+  --text:#2a1f14;
+  --accent:#7a1f18;
+  --accent-dark:#3d0a07;
+  --wine:#6b1620;
+  --wine-light:#8b231b;
+  --gold:#b8860b;
+  --gold-bright:#d4af37;
+  --border:#8a6d3a;
+  --card-bg:#f0e4c8;
+  --dim:#5a4a30;
+  --font-main:'EB Garamond','Georgia','Times New Roman',serif;
+  --font-title:'Cinzel','Cormorant Garamond',serif;
+  --font-gothic:'UnifrakturMaguntia','Cinzel',serif;
+  --font-heading:'Cinzel','Cormorant Garamond',serif;
+  --font-serif-old:'Cormorant Garamond','EB Garamond',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{background:var(--bg-dark)}
+body{
+  font-family:var(--font-main);
+  background-color:var(--bg);
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(74,15,11,0.015) 4px, rgba(74,15,11,0.015) 5px),
+    repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(74,15,11,0.015) 4px, rgba(74,15,11,0.015) 5px),
+    repeating-linear-gradient(45deg, transparent, transparent 64px, rgba(122,31,24,0.03) 64px, rgba(122,31,24,0.03) 65px),
+    repeating-linear-gradient(-45deg, transparent, transparent 64px, rgba(122,31,24,0.03) 64px, rgba(122,31,24,0.03) 65px),
+    radial-gradient(ellipse at 50% 10%, #f0e4c8 0%, #e0d0ad 55%, #c8b48a 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  line-height:1.65;
+  padding:0 1rem 4rem;
+  min-height:100vh;
+  position:relative;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  left:0;right:0;bottom:0;
+  height:380px;
+  background:linear-gradient(to top,
+    rgba(61,10,7,0.28) 0%,
+    rgba(122,31,24,0.18) 30%,
+    rgba(139,35,27,0.08) 65%,
+    transparent 100%);
+  pointer-events:none;
+  z-index:0;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(ellipse at center, transparent 50%, rgba(61,10,7,0.14) 100%);
+  pointer-events:none;
+  z-index:0;
+}
+.wrap{position:relative;z-index:1}
+main,header,footer{position:relative;z-index:1}
+
+header{
+  max-width:900px;
+  margin:0 auto;
+  padding:2.6rem 1rem 1.4rem;
+  text-align:center;
+  border-bottom:3px double var(--accent);
+  position:relative;
+}
+header::after{
+  content:"";
+  position:absolute;
+  bottom:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  width:160px;
+  height:24px;
+  background-image:
+    linear-gradient(45deg, transparent 42%, var(--accent) 42%, var(--accent) 58%, transparent 58%),
+    linear-gradient(-45deg, transparent 42%, var(--accent) 42%, var(--accent) 58%, transparent 58%);
+  background-size:24px 24px;
+  opacity:0.6;
+}
+header h1{
+  font-family:var(--font-heading);
+  font-size:3rem;
+  color:var(--accent);
+  letter-spacing:.04em;
+  text-shadow:2px 2px 0 rgba(184,134,11,0.25), 3px 3px 5px rgba(61,10,7,0.2);
+  font-weight:900;
+  line-height:1.1;
+}
+.subtitle{
+  font-style:italic;
+  color:var(--dim);
+  margin-top:.6rem;
+  font-size:1.1rem;
+  font-family:var(--font-serif-old);
+  letter-spacing:.03em;
+}
+
+nav{
+  margin-top:1.8rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.5rem;
+}
+.tab-btn{
+  background:linear-gradient(to bottom, #f5ebd0, #e0d0ad);
+  border:1px solid var(--border);
+  color:var(--accent-dark);
+  font-family:var(--font-heading);
+  font-size:.92rem;
+  font-weight:600;
+  padding:.55rem 1.15rem;
+  cursor:pointer;
+  border-radius:1px;
+  transition:all .2s;
+  position:relative;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.7), 0 1px 2px rgba(61,10,7,0.15);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.tab-btn::before{
+  content:"";
+  position:absolute;
+  left:3px;top:3px;right:3px;bottom:3px;
+  border:1px solid rgba(122,31,24,0.2);
+  pointer-events:none;
+}
+.tab-btn:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-1px);
+}
+.tab-btn.active{
+  background:linear-gradient(to bottom, var(--wine-light), var(--wine));
+  color:#f5ebd0;
+  border-color:var(--accent-dark);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 6px rgba(61,10,7,0.4);
+}
+.tab-btn.active::before{border-color:rgba(245,235,208,0.3)}
+
+main{max-width:900px;margin:0 auto;padding:2rem 0}
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+h2{
+  font-family:var(--font-heading);
+  color:var(--accent);
+  font-size:1.5rem;
+  margin-bottom:1rem;
+  border-left:5px solid var(--gold);
+  padding-left:.9rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:700;
+  text-shadow:1px 1px 0 rgba(184,134,11,0.15);
+}
+h3{
+  color:var(--accent-dark);
+  font-size:1.1rem;
+  margin:1.6rem 0 .8rem;
+  font-weight:700;
+  font-family:var(--font-heading);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--border);
+  padding-bottom:.3rem;
+}
+.hint{font-style:italic;color:var(--dim);margin-bottom:1rem;font-family:var(--font-serif-old)}
+
+.kartki-controls{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap}
+.kartki-controls select,.kartki-controls button{
+  padding:.5rem .8rem;font-family:var(--font-main);font-size:1rem;
+  border:1px solid var(--border);background:var(--card-bg);cursor:pointer;border-radius:1px;color:var(--text);
+}
+#kartka-container{perspective:1200px;display:flex;justify-content:center;margin:1rem 0 2rem}
+.kartka{width:320px;height:420px;position:relative;transform-style:preserve-3d;transition:transform .6s;cursor:pointer}
+.kartka.flipped{transform:rotateY(180deg)}
+.kartka-front,.kartka-back{
+  position:absolute;inset:0;backface-visibility:hidden;
+  border:2px solid var(--border);border-radius:2px;
+  background:var(--card-bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:1.5rem;
+  box-shadow:0 4px 16px rgba(61,10,7,.18), inset 0 0 40px rgba(184,134,11,0.08);
+  overflow:hidden;
+}
+.kartka-front::before,.kartka-back::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border:1px solid rgba(184,134,11,0.3);
+  pointer-events:none;
+}
+.kartka-back{
+  transform:rotateY(180deg);
+  background:#f8efd8;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 24px, rgba(122,31,24,0.035) 24px, rgba(122,31,24,0.035) 25px),
+    repeating-linear-gradient(-45deg, transparent, transparent 24px, rgba(122,31,24,0.035) 24px, rgba(122,31,24,0.035) 25px);
+}
+.kartka-img{width:100%;height:60%;background-size:cover;background-position:center;background-color:#d8c9a4;border-radius:2px;margin-bottom:1rem;border:1px solid var(--border)}
+.kartka-word{font-size:1.85rem;font-weight:bold;color:var(--accent);text-align:center;font-family:var(--font-heading);text-shadow:1px 1px 0 rgba(184,134,11,0.18);letter-spacing:.03em}
+.kartka-ipa{font-family:'Courier New',monospace;color:var(--dim);margin-top:.5rem}
+.kartka-pos{font-size:.9rem;color:#7a6a4e;font-style:italic;margin-top:.3rem}
+.kartki-nav{display:flex;justify-content:center;gap:1rem}
+.kartki-nav button{padding:.6rem 1.2rem;font-family:var(--font-main);font-size:1rem;border:1px solid var(--border);background:var(--card-bg);cursor:pointer;border-radius:1px;color:var(--text)}
+.kartki-nav button:hover{border-color:var(--accent);color:var(--accent)}
+
+.slownik-controls{margin-bottom:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.slownik-controls input{padding:.6rem;border:1px solid var(--border);background:var(--card-bg);font-family:var(--font-main);font-size:1rem;border-radius:1px;color:var(--text)}
+.alfabet-filter{display:flex;flex-wrap:wrap;gap:.3rem}
+.alfabet-filter button{padding:.3rem .7rem;border:1px solid var(--border);background:var(--card-bg);font-family:var(--font-main);cursor:pointer;border-radius:1px;font-size:.95rem;color:var(--text)}
+.alfabet-filter button.active{background:var(--accent);color:#f5ebd0;border-color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.95rem}
+th,td{border:1px solid var(--border);padding:.55rem .7rem;text-align:left}
+th{background:rgba(122,31,24,.12);color:var(--accent);font-variant:small-caps;font-weight:700;font-family:var(--font-heading);letter-spacing:.04em;font-size:.95rem}
+tr:nth-child(even){background:rgba(184,156,106,.1)}
+td img.thumb{width:40px;height:40px;object-fit:cover;border-radius:1px;vertical-align:middle;border:1px solid var(--border)}
+.btn-del{background:transparent;border:none;color:var(--accent);cursor:pointer;font-size:1.2rem}
+
+form{display:flex;flex-direction:column;gap:1rem;max-width:500px}
+form label{display:flex;flex-direction:column;gap:.3rem;font-weight:600;color:var(--accent-dark);font-family:var(--font-serif-old);font-size:1.05rem}
+form input,form select,form button{
+  padding:.6rem;border:1px solid var(--border);font-family:var(--font-main);font-size:1rem;
+  border-radius:1px;background:var(--card-bg);color:var(--text);
+}
+form button[type="submit"]{
+  background:linear-gradient(to bottom, var(--wine-light), var(--wine));
+  color:#f5ebd0;border:none;cursor:pointer;margin-top:.5rem;font-weight:600;letter-spacing:.06em;
+  font-family:var(--font-heading);text-transform:uppercase;font-size:.95rem;
+}
+form button[type="submit"]:hover{background:linear-gradient(to bottom, var(--wine), var(--accent-dark))}
+#img-preview img{max-width:150px;margin-top:.5rem;border-radius:1px;border:1px solid var(--border)}
+.msg{font-style:italic;color:var(--accent)}
+
+.sync-status{font-size:.9rem;color:var(--dim);font-style:italic;margin-bottom:.8rem}
+[hidden]{display:none!important}
+
+.spravka{
+  background:var(--card-bg);
+  border:2px solid var(--border);
+  border-radius:2px;
+  padding:1.6rem;
+  margin-bottom:2rem;
+  position:relative;
+  box-shadow:inset 0 0 50px rgba(184,134,11,0.08);
+}
+.spravka::before{
+  content:"";
+  position:absolute;
+  top:7px;left:7px;right:7px;bottom:7px;
+  border:1px solid rgba(184,134,11,0.3);
+  border-radius:1px;
+  pointer-events:none;
+}
+.spravka h3{margin-top:0;color:var(--accent)}
+.spravka p{margin-bottom:.8rem}
+.spravka .tag{
+  display:inline-block;border:1px solid var(--border);
+  padding:.18rem .65rem;margin:.2rem .3rem .2rem 0;
+  font-size:.85rem;background:rgba(184,134,11,.1);
+  color:var(--dim);border-radius:1px;
+  font-family:var(--font-heading);letter-spacing:.03em;
+}
+
+.alfabet-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(64px,1fr));
+  gap:8px;
+  margin-bottom:2rem;
+}
+.letter-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:1px;
+  padding:.6rem .3rem;
+  text-align:center;
+  position:relative;
+  transition:all .2s;
+  box-shadow:inset 0 0 20px rgba(184,134,11,0.06);
+}
+.letter-card::before{
+  content:"";
+  position:absolute;
+  inset:3px;
+  border:1px solid rgba(184,134,11,0.2);
+  pointer-events:none;
+}
+.letter-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+  box-shadow:inset 0 0 20px rgba(184,134,11,0.12), 0 3px 8px rgba(61,10,7,0.15);
+}
+.letter-big{
+  font-family:var(--font-heading);
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--accent);
+  line-height:1.1;
+  text-shadow:1px 1px 0 rgba(184,134,11,0.15);
+}
+.letter-small{
+  font-size:.8rem;
+  color:var(--dim);
+  font-family:'Courier New',monospace;
+  margin-top:.2rem;
+}
+.letter-name{
+  font-size:.72rem;
+  color:#7a6a4e;
+  font-style:italic;
+  margin-top:.15rem;
+}
+
+.sklon-section{
+  background:var(--card-bg);
+  border:2px solid var(--border);
+  border-radius:2px;
+  padding:1.4rem;
+  margin-bottom:2rem;
+  position:relative;
+  box-shadow:inset 0 0 50px rgba(184,134,11,0.06);
+}
+.sklon-section::before{
+  content:"";
+  position:absolute;
+  top:6px;left:6px;right:6px;bottom:6px;
+  border:1px solid rgba(184,134,11,0.25);
+  pointer-events:none;
+}
+.sklon-section h3{
+  margin-top:0;
+  color:var(--accent);
+  border-bottom:2px solid var(--gold);
+  padding-bottom:.4rem;
+}
+.sklon-section .example{
+  font-style:italic;
+  color:var(--dim);
+  margin-bottom:1rem;
+  font-family:var(--font-serif-old);
+}
+.sklon-section table{margin-top:.8rem;font-size:.9rem}
+.sklon-section th{
+  background:rgba(122,31,24,.15);
+  font-size:.82rem;
+}
+.sklon-section td:first-child{
+  font-family:var(--font-heading);
+  font-weight:600;
+  color:var(--accent-dark);
+  font-size:.85rem;
+  letter-spacing:.03em;
+}
+.sklon-section td{
+  padding:.45rem .6rem;
+}
+.sklon-section td code{
+  font-family:'Courier New',monospace;
+  font-size:.92em;
+  color:var(--accent-dark);
+}
+
+footer{
+  max-width:900px;margin:3rem auto 0;padding-top:1.2rem;
+  text-align:center;border-top:3px double var(--accent);
+  font-size:.9rem;color:var(--dim);
+}
+footer .ornament{
+  display:inline-block;width:90px;height:16px;margin-bottom:.6rem;
+  background-image:
+    linear-gradient(45deg, transparent 40%, var(--accent) 40%, var(--accent) 60%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, var(--accent) 40%, var(--accent) 60%, transparent 60%);
+  background-size:16px 16px;opacity:.5;
+}
+
+/* === ЗАСТАВКА === */
+html.intro-trwa,html.intro-trwa body{overflow:hidden}
+#intro{
+  position:fixed;inset:0;z-index:1000;cursor:pointer;
+  background:radial-gradient(ellipse at 50% 50%, #f0e4c8 0%, var(--bg) 75%);
+  transition:opacity .8s ease, visibility .8s;
+}
+#intro.koniec{opacity:0;visibility:hidden;pointer-events:none}
+#intro svg{position:absolute;inset:0;width:100%;height:100%}
+#intro-litery{
+  font-family:var(--font-heading);
+  font-weight:900;
+  font-size:118px;
+  letter-spacing:.02em;
+  fill:url(#ornament);
+  fill-opacity:0;
+  stroke:var(--accent-dark);
+  stroke-width:1.8;
+  stroke-linejoin:round;
+  stroke-dasharray:900;
+  stroke-dashoffset:900;
+}
+#intro.start #intro-litery{
+  animation:intro-szyj 2s cubic-bezier(.4,0,.2,1) 1.4s forwards, intro-wzor 1.2s ease 3s forwards;
+}
+@keyframes intro-szyj{to{stroke-dashoffset:0}}
+@keyframes intro-wzor{to{fill-opacity:1}}
+#intro-skip{
+  position:absolute;right:1.2rem;bottom:1.2rem;
+  padding:.45rem 1rem;border:1px solid var(--border);background:rgba(240,228,200,.85);
+  font-family:var(--font-main);font-size:.95rem;color:var(--dim);cursor:pointer;border-radius:1px;
+}
+#intro-skip:hover{border-color:var(--accent);color:var(--accent)}
+
+@media(max-width:600px){
+  header h1{font-size:2rem}
+  .kartka{width:280px;height:380px}
+  .kartka-word{font-size:1.5rem}
+  table{font-size:.8rem}
+  th,td{padding:.35rem .45rem}
+  .spravka,.sklon-section{padding:1rem}
+  .alfabet-grid{grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:6px}
+  .letter-big{font-size:1.3rem}
+  .sklon-section td:first-child{font-size:.75rem}
+  #intro-litery{font-size:56px}
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <svg id="intro-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="ornament" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#b8860b"/>
+        <stop offset="50%" stop-color="#8a231b"/>
+        <stop offset="100%" stop-color="#3d0a07"/>
+      </linearGradient>
+    </defs>
+    <g id="intro-nici"></g>
+    <text id="intro-litery" x="500" y="270" text-anchor="middle">Paranżska mowa</text>
+  </svg>
+  <button id="intro-skip">Пропустить →</button>
+</div>
+
+<div class="wrap">
+
+<header>
+  <h1>Paranżska mowa</h1>
+  <p class="subtitle">Спадчына продкаў · Язык, сотканный из нитей</p>
+  <nav>
+    <button class="tab-btn active" data-tab="kartki">Карточки</button>
+    <button class="tab-btn" data-tab="slownik">Словарь</button>
+    <button class="tab-btn" data-tab="alfabet">Алфавит</button>
+    <button class="tab-btn" data-tab="sklon">Склонения</button>
+    <button class="tab-btn" data-tab="dodaj">Добавить слово</button>
+    <button class="tab-btn" data-tab="spravka">О языке</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-spravka" class="tab-content">
+    <h2>Справка о языке</h2>
+    <div class="spravka">
+      <h3>Paranżska mowa</h3>
+      <p><strong>Paranżska mowa</strong> — искусственный славянский язык, созданный на основе силезского, украинского и белорусского, с заметным немецким и французским влиянием. Письменность — латиница с польскими, чешскими и немецкими диакритиками.</p>
+      <p><strong>Название:</strong> <em>Paranżska mowa</em> — «паранжский язык». Слово <em>mowa</em> означает «язык, речь» и родственно польскому <em>mowa</em> и белорусскому <em>мова</em>.</p>
+      <p><strong>Особенности:</strong></p>
+      <ul style="margin:.5rem 0 .8rem 1.5rem;color:var(--text)">
+        <li>Три числа: единственное, множественное, двойственное</li>
+        <li>Четыре рода: мужской, женский, средний, «оно одушевлённое»</li>
+        <li>Семь падежей, как в польском и чешском</li>
+        <li>Носовые гласные: æ, ą, ę</li>
+        <li>Умлауты: ä, ö, ü</li>
+        <li>Дифтонг iē = [ɨ]</li>
+        <li>Буква ў (у нескладовая)</li>
+      </ul>
+      <p><strong>Культурный контекст:</strong> Язык вдохновлён культурой лужицких сербов (сорбов) — западнославянского народа на юго-востоке Германии, сохранившего свой язык и традиции вопреки столетиям германизации. Их ромбический орнамент — «засеянное поле» и косые кресты — стал основой визуального стиля этого проекта. Белорусские мотивы — геометрическая строгость вышивки и символ «восходящего солнца» — добавляют языку ещё одну грань славянской традиции.</p>
+      <p>
+        <span class="tag">Славянская лексика</span>
+        <span class="tag">Латинский алфавит</span>
+        <span class="tag">Немецкое влияние</span>
+        <span class="tag">Французское влияние</span>
+        <span class="tag">Лужицкий орнамент</span>
+        <span class="tag">Белорусские мотивы</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="tab-kartki" class="tab-content active">
+    <h2>Карточки</h2>
+    <p class="hint">Нажми на карточку, чтобы перевернуть. Стрелки ← → для навигации.</p>
+    <div class="kartki-controls">
+      <select id="kartki-filter"><option value="">Все слова</option></select>
+      <button id="kartki-shuffle">🔀 Перемешать</button>
+      <span id="kartki-counter">0 / 0</span>
+    </div>
+    <div id="kartka-container">
+      <div id="kartka" class="kartka">
+        <div class="kartka-front">
+          <div class="kartka-img" id="kartka-img-front"></div>
+          <div class="kartka-word" id="kartka-word-front">—</div>
+        </div>
+        <div class="kartka-back">
+          <div class="kartka-word" id="kartka-word-back">—</div>
+          <div class="kartka-ipa" id="kartka-ipa"></div>
+          <div class="kartka-pos" id="kartka-pos"></div>
+        </div>
+      </div>
+    </div>
+    <div class="kartki-nav">
+      <button id="kartka-prev">← Назад</button>
+      <button id="kartka-flip">Перевернуть</button>
+      <button id="kartka-next">Вперёд →</button>
+    </div>
+  </section>
+
+  <section id="tab-slownik" class="tab-content">
+    <h2>Словарь</h2>
+    <p class="sync-status" id="sync-status"></p>
+    <div class="slownik-controls">
+      <input type="text" id="search" placeholder="Поиск по слову или переводу...">
+      <div id="alfabet-filter" class="alfabet-filter"></div>
+    </div>
+    <table id="slownik-table">
+      <thead><tr><th>Слово</th><th>МФА</th><th>Часть речи</th><th>Перевод</th><th></th></tr></thead>
+      <tbody id="slownik-body"></tbody>
+    </table>
+  </section>
+
+  <section id="tab-alfabet" class="tab-content">
+    <h2>Alfabet</h2>
+    <p class="hint">Паранжский алфавит: латиница с польскими, чешскими и немецкими диакритиками.</p>
+
+    <h3>Буквы</h3>
+    <div class="alfabet-grid" id="alfabet-grid"></div>
+
+    <h3>Диграфы и дифтонги</h3>
+    <table>
+      <thead><tr><th>Написание</th><th>Звук (МФА)</th><th>Пример</th><th>Перевод</th></tr></thead>
+      <tbody>
+        <tr><td><strong>iē</strong></td><td><code>[ɨ]</code></td><td>beliē</td><td>белая</td></tr>
+        <tr><td><strong>tsch</strong></td><td><code>[ʃ]</code></td><td>tschuła</td><td>школа</td></tr>
+        <tr><td><strong>ck</strong></td><td><code>[k]</code></td><td>back</td><td>бок</td></tr>
+        <tr><td><strong>aü</strong></td><td><code>[ɵ]</code></td><td>aüt</td><td>тоже</td></tr>
+        <tr><td><strong>Dz</strong></td><td><code>[d͡z]</code></td><td>dzěń</td><td>день</td></tr>
+        <tr><td><strong>Dż</strong></td><td><code>[d͡ʒ]</code></td><td>dżem</td><td>джем</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="tab-sklon" class="tab-content">
+    <h2>Sklonjenja</h2>
+    <p class="hint">Три числа, четыре рода, семь падежей. Ниже — образцы склонения для каждого рода.</p>
+
+    <div class="sklon-section">
+      <h3>Мужской род · Dom (дом)</h3>
+      <p class="example">Твёрдая основа, неодушевлённое</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>dom</code></td><td><code>doma</code></td><td><code>domy</code></td></tr>
+          <tr><td>Genitiv</td><td><code>doma</code></td><td><code>domu</code></td><td><code>domow</code></td></tr>
+          <tr><td>Dativ</td><td><code>domu</code></td><td><code>domoma</code></td><td><code>domom</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>dom</code></td><td><code>doma</code></td><td><code>domy</code></td></tr>
+          <tr><td>Instrumental</td><td><code>domem</code></td><td><code>domoma</code></td><td><code>domami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>domu</code></td><td><code>domu</code></td><td><code>domach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>domě!</code></td><td><code>doma!</code></td><td><code>domy!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Мужской род · Tata (папа)</h3>
+      <p class="example">Одушевлённое, основа на -a. Akuzativ = Genitiv!</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>tata</code></td><td><code>tata</code></td><td><code>taty</code></td></tr>
+          <tr><td>Genitiv</td><td><code>taty</code></td><td><code>tatu</code></td><td><code>tatow</code></td></tr>
+          <tr><td>Dativ</td><td><code>tatě</code></td><td><code>tatoma</code></td><td><code>tatom</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>tatę</code></td><td><code>tatu</code></td><td><code>tatow</code></td></tr>
+          <tr><td>Instrumental</td><td><code>tatą</code></td><td><code>tatoma</code></td><td><code>tatami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>tatě</code></td><td><code>tatu</code></td><td><code>tatach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>tato!</code></td><td><code>tata!</code></td><td><code>taty!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Женский род · Woda (вода)</h3>
+      <p class="example">Твёрдая основа на -a</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>woda</code></td><td><code>wody</code></td><td><code>wody</code></td></tr>
+          <tr><td>Genitiv</td><td><code>wody</code></td><td><code>wodu</code></td><td><code>wod</code></td></tr>
+          <tr><td>Dativ</td><td><code>wodě</code></td><td><code>wodoma</code></td><td><code>wodam</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>wodę</code></td><td><code>wody</code></td><td><code>wody</code></td></tr>
+          <tr><td>Instrumental</td><td><code>wodą</code></td><td><code>wodoma</code></td><td><code>wodami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>wodě</code></td><td><code>wodu</code></td><td><code>wodach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>wodo!</code></td><td><code>wody!</code></td><td><code>wody!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Женский род · Noč (ночь)</h3>
+      <p class="example">Основа на согласный</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>noč</code></td><td><code>noči</code></td><td><code>noči</code></td></tr>
+          <tr><td>Genitiv</td><td><code>noči</code></td><td><code>nočiju</code></td><td><code>nočy</code></td></tr>
+          <tr><td>Dativ</td><td><code>noči</code></td><td><code>nočma</code></td><td><code>nočam</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>noč</code></td><td><code>noči</code></td><td><code>noči</code></td></tr>
+          <tr><td>Instrumental</td><td><code>nočą</code></td><td><code>nočma</code></td><td><code>nočami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>noči</code></td><td><code>nočiju</code></td><td><code>nočach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>noči!</code></td><td><code>noči!</code></td><td><code>noči!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Женский род · Donja (дочь)</h3>
+      <p class="example">Мягкая основа на -ja</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>donja</code></td><td><code>donji</code></td><td><code>donje</code></td></tr>
+          <tr><td>Genitiv</td><td><code>donji</code></td><td><code>donju</code></td><td><code>donj</code></td></tr>
+          <tr><td>Dativ</td><td><code>donji</code></td><td><code>donjama</code></td><td><code>donjam</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>donję</code></td><td><code>donji</code></td><td><code>donje</code></td></tr>
+          <tr><td>Instrumental</td><td><code>donją</code></td><td><code>donjama</code></td><td><code>donjami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>donji</code></td><td><code>donju</code></td><td><code>donjach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>donjo!</code></td><td><code>donji!</code></td><td><code>donje!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Средний род · Cělo (тело)</h3>
+      <p class="example">Твёрдая основа на -o</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>cělo</code></td><td><code>cěle</code></td><td><code>cěla</code></td></tr>
+          <tr><td>Genitiv</td><td><code>cěla</code></td><td><code>cělu</code></td><td><code>cělow</code></td></tr>
+          <tr><td>Dativ</td><td><code>cělu</code></td><td><code>cěloma</code></td><td><code>cělom</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>cělo</code></td><td><code>cěle</code></td><td><code>cěla</code></td></tr>
+          <tr><td>Instrumental</td><td><code>cělem</code></td><td><code>cěloma</code></td><td><code>cělami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>cělu</code></td><td><code>cělu</code></td><td><code>cělach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>cělo!</code></td><td><code>cěle!</code></td><td><code>cěla!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Средний род · Sonce (солнце)</h3>
+      <p class="example">Мягкая основа на -ce</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>sonce</code></td><td><code>sonci</code></td><td><code>sonca</code></td></tr>
+          <tr><td>Genitiv</td><td><code>sonca</code></td><td><code>soncu</code></td><td><code>soncow</code></td></tr>
+          <tr><td>Dativ</td><td><code>soncu</code></td><td><code>soncoma</code></td><td><code>soncom</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>sonce</code></td><td><code>sonci</code></td><td><code>sonca</code></td></tr>
+          <tr><td>Instrumental</td><td><code>soncem</code></td><td><code>soncoma</code></td><td><code>soncami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>soncu</code></td><td><code>soncu</code></td><td><code>soncach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>sonce!</code></td><td><code>sonci!</code></td><td><code>sonca!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sklon-section">
+      <h3>Четвёртый род · Isciæ (хождение)</h3>
+      <p class="example">Оно одушевлённое. Akuzativ = Genitiv во всех числах!</p>
+      <table>
+        <thead><tr><th>Падеж</th><th>Ед. ч.</th><th>Двойств. ч.</th><th>Мн. ч.</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td><code>isciæ</code></td><td><code>isciætæ</code></td><td><code>isciæta</code></td></tr>
+          <tr><td>Genitiv</td><td><code>isciæta</code></td><td><code>isciætu</code></td><td><code>isciæt</code></td></tr>
+          <tr><td>Dativ</td><td><code>isciæti</code></td><td><code>isciætma</code></td><td><code>isciætam</code></td></tr>
+          <tr><td>Akuzativ</td><td><code>isciæta</code></td><td><code>isciætu</code></td><td><code>isciæt</code></td></tr>
+          <tr><td>Instrumental</td><td><code>isciætem</code></td><td><code>isciætma</code></td><td><code>isciætami</code></td></tr>
+          <tr><td>Lokativ</td><td><code>isciæti</code></td><td><code>isciætu</code></td><td><code>isciætach</code></td></tr>
+          <tr><td>Vokativ</td><td><code>isciæ!</code></td><td><code>isciætæ!</code></td><td><code>isciæta!</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="tab-dodaj" class="tab-content">
+    <h2>Добавить слово</h2>
+    <p class="hint">Слова сохраняются в этом браузере. Другие посетители их не увидят.</p>
+    <form id="form-dodaj">
+      <label>Слово (Paranżska mowa)<input type="text" id="f-word" required placeholder="dom"></label>
+      <label>МФА (транскрипция)<input type="text" id="f-ipa" placeholder="[dom]"></label>
+      <label>Часть речи
+        <select id="f-pos">
+          <option value="сущ.">Существительное</option>
+          <option value="глаг.">Глагол</option>
+          <option value="прил.">Прилагательное</option>
+          <option value="мест.">Местоимение</option>
+          <option value="нареч.">Наречие</option>
+          <option value="предлог">Предлог</option>
+          <option value="союз">Союз</option>
+        </select>
+      </label>
+      <label>Перевод (русский)<input type="text" id="f-ru" required placeholder="дом"></label>
+      <label>Картинка (URL или загрузить файл)
+        <input type="text" id="f-img-url" placeholder="https://...">
+        <input type="file" id="f-img-file" accept="image/*">
+      </label>
+      <div id="img-preview"></div>
+      <button type="submit">Добавить</button>
+      <p id="form-msg" class="msg"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="ornament"></div>
+  <p>© 2026 Paranżska mowa · Словарь хранится в браузере</p>
+</footer>
+</div>
+
+<script>
+/* === ЗАСТАВКА === */
+(function(){
+  const intro = document.getElementById('intro');
+  const zakoncz = () => {
+    if(intro.classList.contains('koniec')) return;
+    intro.classList.add('koniec');
+    document.documentElement.classList.remove('intro-trwa');
+    setTimeout(() => intro.remove(), 800);
+  };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    intro.remove();
+    return;
+  }
+  document.documentElement.classList.add('intro-trwa');
+  intro.addEventListener('click', zakoncz);
+  addEventListener('keydown', zakoncz, {once:true});
+  document.getElementById('intro-skip').addEventListener('click', e => { e.stopPropagation(); zakoncz(); });
+
+  const svg = document.getElementById('intro-nici');
+  const NS = 'http://www.w3.org/2000/svg';
+  const KOLORY = ['#8b231b','#a3382c','#c0392b','#5e1712','#d0533f','#7a1d16','#b5452f','#e06a55'];
+  const rnd = (a,b) => a + Math.random()*(b-a);
+
+  const nici = Array.from({length:22}, (_,i) => {
+    const el = document.createElementNS(NS,'path');
+    el.setAttribute('fill','none');
+    el.setAttribute('stroke', KOLORY[i % KOLORY.length]);
+    el.setAttribute('stroke-width', rnd(1.2,3.2).toFixed(1));
+    el.setAttribute('stroke-linecap','round');
+    el.setAttribute('vector-effect','non-scaling-stroke');
+    svg.appendChild(el);
+    return {
+      el,
+      litera: i % 3 !== 2,
+      y: rnd(80,420),
+      amp: rnd(25,90),
+      czest: rnd(1.2,3),
+      faza: rnd(0,6.3),
+      pred: rnd(.8,2),
+      cel: rnd(220,290),
+      odplyw: Math.random() < .5 ? -1 : 1,
+      opoz: rnd(0,.5)
+    };
+  });
+
+  const gladko = t => t < 0 ? 0 : t > 1 ? 1 : t*t*(3-2*t);
+  const czesc = (t,a,b) => gladko((t-a)/(b-a));
+
+  let start = null;
+  function klatka(ts){
+    if (start === null) start = ts;
+    const t = (ts - start) / 1000;
+    for (const n of nici) {
+      const wejscie = czesc(t, n.opoz, n.opoz+.9);
+      const zbieg = czesc(t, 1.4, 2.6);
+      const wyjscie = n.litera ? czesc(t,2.4,3.1) : czesc(t,1.6,2.6);
+      const y0 = n.litera ? n.y + (n.cel - n.y) * zbieg : n.y + n.odplyw * 220 * czesc(t,1.4,2.8);
+      const amp = n.amp * (n.litera ? 1 - .85 * zbieg : 1);
+      const koniec = -40 + 1080 * wejscie;
+      let d = '';
+      for (let k = 0; k <= 40; k++) {
+        const x = -40 + (koniec + 40) * k/40;
+        const y = y0 + amp * Math.sin(x/1000 * n.czest * 6.283 + n.faza + t * n.pred * 2);
+        d += (k ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
+      }
+      n.el.setAttribute('d', d);
+      n.el.style.opacity = (1 - wyjscie).toFixed(3);
+    }
+    if (t < 3.4) requestAnimationFrame(klatka);
+  }
+
+  const ruszaj = () => {
+    intro.classList.add('start');
+    requestAnimationFrame(klatka);
+    setTimeout(zakoncz, 5200);
+  };
+  Promise.race([
+    document.fonts ? document.fonts.load('900 100px Cinzel') : Promise.resolve(),
+    new Promise(r => setTimeout(r, 800))
+  ]).then(ruszaj, ruszaj);
+})();
+
+/* === ОСНОВНОЙ КОД === */
+const CACHE_KEY = 'paranzka_slowa_cache';
+
+const ALFABET = [
+  {b:'A a', s:'[a]', n:'а'},
+  {b:'Ą ą', s:'[ɔ̃]', n:'носовое о'},
+  {b:'B b', s:'[b]', n:'бэ'},
+  {b:'C c', s:'[t͡s]', n:'цэ'},
+  {b:'Č č', s:'[t͡ʃ]', n:'чэ'},
+  {b:'D d', s:'[d]', n:'дэ'},
+  {b:'E e', s:'[ɛ]', n:'э'},
+  {b:'Ě ě', s:'[e]', n:'е'},
+  {b:'F f', s:'[f]', n:'эф'},
+  {b:'Г г', s:'[ɣ]', n:'га фрикат.'},
+  {b:'Ґ ґ', s:'[g]', n:'ґэ взрыв.'},
+  {b:'H h', s:'[x]', n:'ха'},
+  {b:'I i', s:'[i]', n:'и'},
+  {b:'J j', s:'[j]', n:'йот'},
+  {b:'K k', s:'[k]', n:'ка'},
+  {b:'L l', s:'[l]', n:'эль'},
+  {b:'Ł ł', s:'[w]', n:'уа'},
+  {b:'M m', s:'[m]', n:'эм'},
+  {b:'N n', s:'[n]', n:'эн'},
+  {b:'O o', s:'[ɔ]', n:'о'},
+  {b:'P p', s:'[p]', n:'пэ'},
+  {b:'R r', s:'[r]', n:'эр'},
+  {b:'S s', s:'[s]', n:'эс'},
+  {b:'Ś ś', s:'[ɕ]', n:'сь мягк.'},
+  {b:'Š š', s:'[ʃ]', n:'шэ'},
+  {b:'T t', s:'[t]', n:'тэ'},
+  {b:'Ť ť', s:'[c]', n:'ть мягк.'},
+  {b:'U u', s:'[u]', n:'у'},
+  {b:'Ŭ ŭ', s:'[u̯]', n:'у нескл.'},
+  {b:'W w', s:'[v]', n:'вэ'},
+  {b:'V v', s:'[f]', n:'фауль'},
+  {b:'Y y', s:'[ɨ]', n:'игрик'},
+  {b:'Z z', s:'[z]', n:'зэт'},
+  {b:'Ż ż', s:'[ʐ]', n:'жэт'},
+  {b:'Ä ä', s:'[ɛ]', n:'а умлаут'},
+  {b:'Æ æ', s:'[ɛ̃]', n:'а назальн.'},
+  {b:'Ö ö', s:'[ø]', n:'о умлаут'},
+  {b:'Ü ü', s:'[y]', n:'у умлаут'}
+];
+
+let wszystkieSlowa = pobierzZPamieci();
+let kartkiKolejka = [...wszystkieSlowa];
+let kartkaIndex = 0;
+let filtrAlfabet = '';
+let imgBase64 = '';
+
+function pobierzZPamieci(){try{const raw=localStorage.getItem(CACHE_KEY);return raw?JSON.parse(raw):[]}catch(e){return[]}}
+function zapiszWPamieci(s){try{localStorage.setItem(CACHE_KEY,JSON.stringify(s))}catch(e){}}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function ustawStatus(t){document.getElementById('sync-status').textContent=t}
+
+function renderujAlfabet(){
+  const grid = document.getElementById('alfabet-grid');
+  grid.innerHTML = ALFABET.map(l => `
+    <div class="letter-card">
+      <div class="letter-big">${esc(l.b)}</div>
+      <div class="letter-small">${esc(l.s)}</div>
+      <div class="letter-name">${esc(l.n)}</div>
+    </div>
+  `).join('');
+}
+
+async function dodajSlowo(s){
+  s.id = Date.now().toString() + Math.random();
+  wszystkieSlowa.push(s);
+  zapiszWPamieci(wszystkieSlowa);
+  return s;
+}
+async function usunSlowo(id){
+  wszystkieSlowa = wszystkieSlowa.filter(s => String(s.id) !== String(id));
+  zapiszWPamieci(wszystkieSlowa);
+}
+
+function odswiezWidok(){
+  kartkiKolejka=[...wszystkieSlowa];
+  kartkaIndex=0;
+  obnoviFiltry();
+  renderujSlownik();
+  pokazKartke();
+  const posSet=[...new Set(wszystkieSlowa.map(s=>s.pos).filter(Boolean))];
+  const filterSelect=document.getElementById('kartki-filter');
+  const currentVal=filterSelect.value;
+  filterSelect.innerHTML='<option value="">Все слова</option>';
+  posSet.forEach(p=>{
+    const opt=document.createElement('option');
+    opt.value=p;opt.textContent=p;
+    filterSelect.appendChild(opt);
+  });
+  filterSelect.value=posSet.includes(currentVal)?currentVal:'';
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    const activeTab = document.getElementById('tab-'+btn.dataset.tab);
+    activeTab.classList.add('active');
+    activeTab.style.animation = 'none';
+    void activeTab.offsetWidth;
+    activeTab.style.animation = '';
+    if(btn.dataset.tab==='kartki'){
+      kartkiKolejka=[...wszystkieSlowa];
+      kartkaIndex=0;
+      document.getElementById('kartki-filter').value='';
+      pokazKartke();
+    }
+    if(btn.dataset.tab==='slownik') renderujSlownik();
+  });
+});
+
+function renderujSlownik(){
+  const query=document.getElementById('search').value.toLowerCase().trim();
+  const tbody=document.getElementById('slownik-body');
+  tbody.innerHTML='';
+  const wynik=wszystkieSlowa.filter(s=>{
+    const pasujeTekst=s.word.toLowerCase().includes(query)||s.ru.toLowerCase().includes(query);
+    const pasujeAlfabet=!filtrAlfabet||s.word.toLowerCase().startsWith(filtrAlfabet.toLowerCase());
+    return pasujeTekst&&pasujeAlfabet;
+  });
+  if(wynik.length===0){
+    tbody.innerHTML='<tr><td colspan="5" style="text-align:center;color:#999;">Ничего не найдено</td></tr>';
+    return;
+  }
+  wynik.forEach(s=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`
+      <td><strong>${esc(s.word)}</strong></td>
+      <td><code>${esc(s.ipa)}</code></td>
+      <td>${esc(s.pos)}</td>
+      <td>${esc(s.ru)}</td>
+      <td>${s.img?`<img src="${esc(s.img)}" class="thumb">`:''}
+          <button class="btn-del" data-id="${esc(s.id)}" title="Удалить">✕</button></td>`;
+    tbody.appendChild(tr);
+  });
+  tbody.querySelectorAll('.btn-del').forEach(btn=>{
+    btn.addEventListener('click',async()=>{
+      if(!confirm('Удалить слово?'))return;
+      btn.disabled=true;
+      await usunSlowo(btn.dataset.id);
+      odswiezWidok();
+    });
+  });
+}
+document.getElementById('search').addEventListener('input',renderujSlownik);
+
+function obnoviFiltry(){
+  const bukvy=[...new Set(wszystkieSlowa.map(s=>s.word[0].toLowerCase()))].sort();
+  if(filtrAlfabet&&!bukvy.includes(filtrAlfabet))filtrAlfabet='';
+  const container=document.getElementById('alfabet-filter');
+  container.innerHTML='';
+  const allBtn=document.createElement('button');
+  allBtn.textContent='Все';
+  allBtn.className=filtrAlfabet===''?'active':'';
+  allBtn.addEventListener('click',()=>{filtrAlfabet='';obnoviFiltry();renderujSlownik()});
+  container.appendChild(allBtn);
+  bukvy.forEach(b=>{
+    const btn=document.createElement('button');
+    btn.textContent=b.toUpperCase();
+    btn.className=filtrAlfabet===b?'active':'';
+    btn.addEventListener('click',()=>{filtrAlfabet=b;obnoviFiltry();renderujSlownik()});
+    container.appendChild(btn);
+  });
+}
+
+function pokazKartke(){
+  const counter=document.getElementById('kartki-counter');
+  if(kartkiKolejka.length===0){
+    document.getElementById('kartka-word-front').textContent='Нет слов';
+    document.getElementById('kartka-word-back').textContent='Добавь слова';
+    document.getElementById('kartka-img-front').style.backgroundImage='';
+    document.getElementById('kartka-ipa').textContent='';
+    document.getElementById('kartka-pos').textContent='';
+    counter.textContent='0 / 0';
+    return;
+  }
+  if(kartkaIndex>=kartkiKolejka.length)kartkaIndex=0;
+  if(kartkaIndex<0)kartkaIndex=kartkiKolejka.length-1;
+  const s=kartkiKolejka[kartkaIndex];
+  document.getElementById('kartka-word-front').textContent=s.word;
+  document.getElementById('kartka-word-back').textContent=s.ru;
+  document.getElementById('kartka-ipa').textContent=s.ipa||'';
+  document.getElementById('kartka-pos').textContent=s.pos||'';
+  document.getElementById('kartka-img-front').style.backgroundImage=s.img?`url("${s.img.replace(/"/g,'%22')}")`:'';
+  document.getElementById('kartka').classList.remove('flipped');
+  counter.textContent=`${kartkaIndex+1} / ${kartkiKolejka.length}`;
+}
+document.getElementById('kartka').addEventListener('click',()=>{
+  document.getElementById('kartka').classList.toggle('flipped');
+});
+document.getElementById('kartka-next').addEventListener('click',()=>{kartkaIndex++;pokazKartke()});
+document.getElementById('kartka-prev').addEventListener('click',()=>{kartkaIndex--;pokazKartke()});
+document.getElementById('kartka-flip').addEventListener('click',()=>{
+  document.getElementById('kartka').classList.toggle('flipped');
+});
+document.getElementById('kartki-shuffle').addEventListener('click',()=>{
+  kartkiKolejka=[...wszystkieSlowa].sort(()=>Math.random()-0.5);
+  kartkaIndex=0;
+  pokazKartke();
+});
+document.getElementById('kartki-filter').addEventListener('change',e=>{
+  const pos=e.target.value;
+  kartkiKolejka=pos?wszystkieSlowa.filter(s=>s.pos===pos):[...wszystkieSlowa];
+  kartkaIndex=0;
+  pokazKartke();
+});
+
+function zmniejszObraz(dataUrl,max=600){
+  return new Promise(resolve=>{
+    const img=new Image();
+    img.onload=()=>{
+      const k=Math.min(1,max/Math.max(img.width,img.height));
+      const c=document.createElement('canvas');
+      c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      resolve(c.toDataURL('image/jpeg',0.82));
+    };
+    img.onerror=()=>resolve(dataUrl);
+    img.src=dataUrl;
+  });
+}
+document.getElementById('f-img-file').addEventListener('change',e=>{
+  const file=e.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=async ev=>{
+    imgBase64=await zmniejszObraz(ev.target.result);
+    document.getElementById('img-preview').innerHTML=`<img src="${imgBase64}">`;
+  };
+  reader.readAsDataURL(file);
+});
+document.getElementById('f-img-url').addEventListener('input',e=>{
+  const url=e.target.value.trim();
+  if(url){
+    imgBase64=url;
+    document.getElementById('img-preview').innerHTML=`<img src="${esc(url)}">`;
+  }else{
+    imgBase64='';
+    document.getElementById('img-preview').innerHTML='';
+  }
+});
+document.getElementById('form-dodaj').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const word=document.getElementById('f-word').value.trim();
+  const ipa=document.getElementById('f-ipa').value.trim();
+  const pos=document.getElementById('f-pos').value;
+  const ru=document.getElementById('f-ru').value.trim();
+  const imgUrl=document.getElementById('f-img-url').value.trim();
+  const img=imgBase64||imgUrl||'';
+  if(!word||!ru)return;
+  const msg=document.getElementById('form-msg');
+  const submit=e.target.querySelector('button[type="submit"]');
+  submit.disabled=true;
+  msg.textContent='Сохраняю…';
+  await dodajSlowo({word,ipa,pos,ru,img});
+  msg.textContent=`Слово «${word}» добавлено!`;
+  document.getElementById('form-dodaj').reset();
+  document.getElementById('img-preview').innerHTML='';
+  imgBase64='';
+  submit.disabled=false;
+  odswiezWidok();
+});
+
+renderujAlfabet();
+odswiezWidok();
+</script>
+</body>
+</html>
